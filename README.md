@@ -1,9 +1,28 @@
 # UPSMON
 UPSMON is a tool to monitor upses, will be able to send warnings, display everything in a web interface and check multiple upses
 
-# API SERVER
-To start the API server run "gunicorn -w 4 -b 127.0.0.1:5000" request:app on API server
-the 10 min update is runned with cron job, check ubuntu 14.04 cron jobs
+## Virtual Enviroment
+You should create and activate virtual environment:
 
-# MAILER
-E-mails are sent from server/upsWarning/mailer.php & date.php check comments for more information
+```
+sudo pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+```
+
+If there is a problem [consult this](https://virtualenv.pypa.io/en/stable/installation/)
+
+## Install dependecises
+
+When in your virtualenviroment just run
+
+```
+pip install -r requirements.txt
+```
+
+## Install application
+To install the required configs for this application just run the install.py script.
+
+## Run application
+
+open the terminal and write ```flask run``` then browse to [locaclhost:5000](http://localhost:5000)
