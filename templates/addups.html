@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="content" class="container-fluid">
+
+    <form action="" method="post" novalidate>
+        <p>{{form.name.label}}
+        {{form.name}}</p>
+        <p>{{form.ip.label}}
+        {{form.ip}}</p>
+        <p>{{form.submit}}</p>
+
+    </form>
+</div>
+{% endblock %}

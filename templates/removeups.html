@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="content" class="container-fluid">
+    <h1> Remove <!-- <button style="float:right;" class="btn btn-success" onclick="updateUps('all')">Update All</button>--></h1>
+    <div class="table table-responsive">
+        <h1>Not yet implemented</h1>
+        <table id="list">
+            <tr><th>Upsname</th><th>Status</th><th>Serial</th><th>Last Disconnect</th><th>Battime</th><th>Current Power</th><th>Controller Adress</th><th>Battery Manufatory Date</th><th>Last Update</th></tr>
+            {% for ups in upsList %}
+                {% if ups.status == "OL" %}
+                <tr class="ups-item"><td class="ups-name">{{ups.name}}</td><td style='background-color: lime;'>{{ups.status}}</td><td>{{ups.serial}}</td><td>{{ups.DC}}</td><td>{{ups.batt}} Min</td><td>{{ups.currpow}}</td><td>{{ups.ip}}</td><td>{{ups.battmfr}}</td><td>{{ups.lastup}}</td></tr>
+                {% endif %}
+
+                {% if ups.status == "OB" %}
+                <tr class="ups-item"><td class="ups-name">{{ups.name}}</td><td style='background-color: orange;'>{{ups.status}}</td><td>{{ups.serial}}</td><td>{{ups.DC}}</td><td>{{ups.batt}} Min</td><td>{{ups.currpow}}</td><td>{{ups.ip}}</td><td>{{ups.battmfr}}</td><td>{{ups.lastup}}</td></tr>
+                {% endif %}
+
+                {% if ups.status == "ALARM" %}
+                <tr class="ups-item"><td class="ups-name">{{ups.name}}</td><td style='background-color: red;'>{{ups.status}}</td><td>{{ups.serial}}</td><td>{{ups.DC}}</td><td>{{ups.batt}} Min</td><td>{{ups.currpow}}</td><td>{{ups.ip}}</td><td>{{ups.battmfr}}</td><td>{{ups.lastup}}</td></tr>
+
+                {% endif %}
+                {% if ups.status == "None"  %}
+                <tr class="ups-item"><td class="ups-name">{{ups.name}}</td><td>{{ups.status}}</td><td>{{ups.serial}}</td><td>{{ups.DC}}</td><td>{{ups.batt}} Min</td><td>{{ups.currpow}}</td><td>{{ups.ip}}</td><td>{{ups.battmfr}}</td><td>{{ups.lastup}}</td></tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}

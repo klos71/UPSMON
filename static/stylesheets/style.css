@@ -1,0 +1,35 @@
+body{
+    background-color: whitesmoke;
+}
+
+#content{
+    margin-top: 60px;
+}
+#list button{
+    float: right;
+}
+#list{
+    align-self: auto;
+    min-width: 100%;
+}
+.ups-item:nth-child(odd) {
+    background: rgba(0, 0, 0,0.1);
+  }
+
+  .ups-item:nth-child(even) {
+    background: rgba(0, 0, 0,0.05);
+  }
+
+#list .ups-item{
+    height: 50px;
+    font-size: 14px;
+    align-content: center;
+    padding: 8px;
+
+}
+#list .ups-item td{
+    border: 1px solid black;
+}
+#removalForm{
+    width: 200px;
+}
